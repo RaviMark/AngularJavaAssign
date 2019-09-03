@@ -1,0 +1,15 @@
+<p>preview works!</p>
+<form [formGroup]='PreviewForm' (ngSubmit)='onSubmit()'>
+    <!-- Name:
+    <input type="text" formControlName='name'><br> -->
+			
+    <select class="custom-select" (change)="changeCity($event)" formControlName="type">
+      <option value="">Choose your Type to Sort</option>
+      <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
+    </select>
+
+
+    <button type="submit">Submit Record</button>
+</form>
+ 
+{{PreviewForm.value | json}}

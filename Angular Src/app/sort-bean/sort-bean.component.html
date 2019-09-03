@@ -1,0 +1,16 @@
+<p>sort-bean works!</p>
+<br><br>
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+    <select class="custom-select" (change)="changeType($event)" formControlName="type">
+        <option value="">Choose your Type to Sort</option>
+        <option *ngFor="let type of Type" [ngValue]="type">{{type}}</option>
+    </select>
+    <button type="submit">Submit</button>
+</form> <br>
+{{registrationForm.value | json}} <br><br>
+Result :
+<p>
+    {{res}}
+</p> 
