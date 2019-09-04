@@ -28,5 +28,17 @@ public class PersonBean {
 	public void setAge(String age) {
 		this.age = age;
 	}
-
+	public boolean equals(PersonBean pb) {
+		if (pb == this)
+            return true;
+		if(pb.getFirstName()!=null && this.getFirstName().compareTo(pb.getFirstName()) != 0)
+			return false;
+		if(pb.getLastName()!=null && this.getLastName().compareTo(pb.getLastName()) != 0)
+			return false;
+		if(pb.getEmail()!=null && this.getEmail().compareTo(pb.getEmail()) != 0)
+			return false;
+		if(pb.getAge()!=null && this.getAge().compareTo(pb.getAge()) != 0)
+			return false;
+		return true;		
+	}
 }

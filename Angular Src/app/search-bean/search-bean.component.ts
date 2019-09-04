@@ -20,13 +20,13 @@ export class SearchBeanComponent implements OnInit {
 
   profileForm = this.fb.group(
     {
-      firstName : ['**'],
-      lastName: ['**'],
-      email : ['**'],
-      age : ['-1']
+      firstName : [''],
+      lastName: [''],
+      email : [''],
+      age : ['']
     })
     onSubmit() {
-     this.dataSource.addRecord(this.profileForm.value).then(res=> {this.res=res.data});
+     this.dataSource.searchRecord(this.profileForm.value).then(res=> {this.res=res.data});
     }
   changeType(e) {
     console.log(e.value)
